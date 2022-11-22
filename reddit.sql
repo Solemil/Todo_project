@@ -1,18 +1,19 @@
-CREATE DATABASE IF NOT EXISTS databasename;
+CREATE DATABASE IF NOT EXISTS todoDB;
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 
-USE databasename;
+USE todoDB;
 
-DROP TABLE IF EXISTS databasename;
+DROP TABLE IF EXISTS todoDB;
 
-CREATE TABLE urldatabase (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-
+CREATE TABLE  todoList(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	completed BOOLEAN DEFAULT 0,
+    text VARCHAR(255) NOT NULL
 );
 
-INSERT INTO  urldatabase(url, alias, secretCode)
+INSERT INTO  todoList(text)
 VALUES
-('8gag.com', '8gag', 1235),
-('9gag.com', '9gag', 1234);
+('Watch movie'),
+('Buy milk');
 
-SELECT * FROM databasename;
+SELECT * FROM todoList;
